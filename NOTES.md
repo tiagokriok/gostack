@@ -11,3 +11,13 @@
 - **POST**: Criar uma informação no backend
 - **PUT/PATCH**: Alterar uma informação no backend
 - **DELETE**: Deletar uma informação no backend
+
+## Tipos de parâmetros
+
+- **Query Params**: Filtros e paginação
+- **Route Params**: Identificar recursos (Atulizar/Deletar)
+- **Request Body**: Conteúdo na hora criar ou editar um recurso (JSON)
+
+## Middleware
+
+É um interceptador de requisições que pode interromper totalmente a requisição ou alterar dados da requisição
