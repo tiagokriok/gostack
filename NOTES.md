@@ -105,9 +105,6 @@
   ```
 
 - Executar o webpack-dev-server: `yarn webpack serve --mode development`
-
-#### Componentização
-
 - JSX: HTML dentro do JavaScript (JavaScript XML)
 - Fragment: `<> </>`
 - Propriedade: Passar info de um componente pai para o seus filhos componentes
@@ -140,3 +137,17 @@
       },
     ```
 
+- Consumindo um API, para isso instalar: `yarn add axios`
+- Configuração para Consumir API com axios:
+  
+  ```javascript
+    import axios from 'axios';
+
+    const api = axios.create({
+      baseURL: 'http://localhost:3333',
+    });
+
+    export default api;
+  ```
+
+- Para o Babel enteder devemos adicionar o `yarn add @babel/plugin-transform-runtime -D`

@@ -1,30 +1,48 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import api from './services/api';
 
 import './App.css';
-import backgroundImage from './assets/image1.jpg';
 
 import Header from './components/Header';
 
 function App() {
-  const [projects, setProject] = useState(['Teste 1', 'Teste 2']);
+  const [projects, setProjects] = useState([]);
 
-  function handleAddProject() {
-    // projects.push(`Novo Projeto ${Date.now()}`);
+  useEffect(() => {
+    api.get('projects').then((response) => {
+      setProjects(response.data);
+    });
+  }, []);
 
-    setProject([...projects, `Novo Projeto ${Date.now()}`]);
+  // function handleAddProject() {
+  //   api
+  //     .post('projects', {
+  //       title: `Novo Projeto ${Date.now()}`,
+  //       owner: `Tiago ${Date.now()}`,
+  //     })
+  //     .then((response) => {
+  //       const project = response.data;
 
-    console.log(projects);
+  //       setProjects([...projects, project]);
+  //     });
+  // }
+  async function handleAddProject() {
+    const response = await api.post('projects', {
+      title: `Novo Projeto ${Date.now()}`,
+      owner: `Tiago ${Date.now()}`,
+    });
+    const project = response.data;
+
+    setProjects([...projects, project]);
   }
 
   return (
     <>
       <Header title="GOSTACK" />
 
-      <img src={backgroundImage} />
-
       <ul>
         {projects.map((project) => (
-          <li key={project}>{project}</li>
+          <li key={project.id}>{project.title}</li>
         ))}
       </ul>
 
