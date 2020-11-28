@@ -1,4 +1,4 @@
-# GOSTACK Notes
+# GOSTACK Conceitos
 
 ## Conceitos de Backend com NodeJS
 
@@ -151,3 +151,22 @@
   ```
 
 - Para o Babel enteder devemos adicionar o `yarn add @babel/plugin-transform-runtime -D`
+
+## Conceitos de Mobile com React-Native
+
+- Versão do React para desenvolvimento mobile
+- Multiplataforma
+- Podemos manipular cada plataforma de forma diferente
+- Código não é transpilado
+
+### Sintaxe
+
+- A delclaração de componentes é igual ao web;
+- Não usamos HTML e sim componentes próprios;
+- Aplicamos estilo sem classe ou ID's;
+- Todo texto é `<Text />` não existe estilização própria;
+
+### Expo
+
+- SDK com um conjunto de funcionalidades prontas para usar (câmera, vídeo, integrações);
+- Não é necessário configurar emulador;
