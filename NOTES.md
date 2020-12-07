@@ -170,3 +170,10 @@
 
 - SDK com um conjunto de funcionalidades prontas para usar (câmera, vídeo, integrações);
 - Não é necessário configurar emulador;
+
+## Typescript
+
+- Instalar Typescript: `yarn add -D typescript`
+- Inicializar tsconfig: `yarn tsc --init`
+- Typescript to Javascript: `yarn tsc`
+- Directory for Compiled scripts (tsconfig.json): `"outDir": "./dist"`
