@@ -177,3 +177,29 @@
 - Inicializar tsconfig: `yarn tsc --init`
 - Typescript to Javascript: `yarn tsc`
 - Directory for Compiled scripts (tsconfig.json): `"outDir": "./dist"`
+
+## Debug VSCODE
+
+- Config
+  
+  ```json
+  {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "node",
+        "request": "attach",
+        "protocol":"inspector",
+        "restart": true,
+        "name": "Debug",
+        "skipFiles": [
+          "<node_internals>/**"
+        ],
+        "outFiles": [
+          "${workspaceFolder}/**/*.js"
+        ]
+      }
+    ]
+  }
+
+  ```
